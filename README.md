@@ -2,7 +2,7 @@
 
 [![Latest Version](https://img.shields.io/github/tag/cornernote/yii2-workflow-manager.svg?style=flat-square&label=release)](https://github.com/derekisbusy/yii2-forcecopy/tags)
 [![Software License](https://img.shields.io/badge/license-BSD-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Total Downloads](https://img.shields.io/packagist/dt/cornernote/yii2-workflow-manager.svg?style=flat-square)](https://packagist.org/packages/derekisbusy/yii2-forcecopy)
+[![Total Downloads](https://img.shields.io/packagist/dt/derekisbusy/yii2-forcecopy.svg?style=flat-square)](https://packagist.org/packages/derekisbusy/yii2-forcecopy)
 
 
 Adds a button to quickly turn [forceCopy](http://www.yiiframework.com/doc-2.0/yii-web-assetmanager.html#$forceCopy-detail) on/off in the debug toolbar.
