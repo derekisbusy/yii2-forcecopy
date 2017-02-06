@@ -17,5 +17,8 @@
         "psr-4": {
             "derekisbusy\\forcecopy\\": ""
         }
+    },
+    "extra": {
+        "bootstrap": "derekisbusy\\forcecopy\\ForceCopyExtension"
     }
 }
