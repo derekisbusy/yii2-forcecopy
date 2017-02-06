@@ -2,11 +2,9 @@
 
 namespace derekisbusy\forcecopy;
 
-use yii\base\Event;
-use yii\base\View;
-use yii\base\ViewEvent;
+use Yii;
+use yii\base\Application;
 use yii\debug\Panel;
-use yii\helpers\Url;
 
 
 class ForcecopyPanel extends Panel
@@ -16,8 +14,9 @@ class ForcecopyPanel extends Panel
     public function init()
     {
         parent::init();
-        Event::on(View::className(), View::EVENT_BEFORE_RENDER, function (ViewEvent $event) {
-            $this->_viewFiles[] = $event->sender->getViewFile();
+        $app = Yii::$app;
+        $app->on(Application::EVENT_BEFORE_REQUEST, function () use ($app) {
+            ForcecopyAsset::register($app->getView());
         });
     }
 
@@ -27,7 +26,7 @@ class ForcecopyPanel extends Panel
      */
     public function getName()
     {
-        return 'Views';
+        return 'Forcecopy';
     }
 
     /**
@@ -35,23 +34,17 @@ class ForcecopyPanel extends Panel
      */
     public function getSummary()
     {
-        $route = Url::to(['debug/forcecopy/switch']);
-        $force = Yii::$app->cookies->getValue('debug-focecopy','Off');
+//        $forcecopy = 'on';
+        $forcecopy = Yii::$app->request->cookies->getValue('debug-focecopy',Yii::$app->assetManager->forceCopy ? 'On' : 'Off');
         $html = <<<EOL
 
-$('#debug-toolbar-forcecopy-link).on('click', function (e) {
-    e.preventDefault();
-    $.getJSON( "ajax/test.json", function( forcecopy ) {
-      $('#debug-toolbar-forcecopy-link').html(forcecopy);
-    });
-});
 
-<div class=\"yii-debug-toolbar__block\">         
-    Forcecopy <span class=\"yii-debug-toolbar__label yii-debug-toolbar__label_info\"><a id="debug-toolbar-forcecopy-link" href="#">$forcecopy</a></span>
+<div class="yii-debug-toolbar__block">         
+    Forcecopy <span id="debug-toolbar-forcecopy-link" class="yii-debug-toolbar__label yii-debug-toolbar__label_info" style="cursor: pointer">$forcecopy</span>
 </div>
+
 EOL;
         return $html;
-        return "<a href=\"\">Views <span class=\"yii-debug-toolbar__label yii-debug-toolbar__label_info\">$count</span></a>";
     }
 
     /**
