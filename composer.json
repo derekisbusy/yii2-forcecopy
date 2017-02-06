@@ -1,0 +1,21 @@
+{
+    "name": "derekisbusy/yii2-forcecopy",
+    "description": "Adds a button to quickly turn forcecopy on/off in the asset manager .",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","debug","developer","assets.assetManager"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Derek Gifford",
+            "email": "derekisbusy@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "derekisbusy\\forcecopy\\": ""
+        }
+    }
+}
