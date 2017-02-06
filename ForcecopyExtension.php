@@ -2,9 +2,9 @@
 
 namespace derekisbusy\forcecopy;
 
-class ForcecopyExtension implements BoostrapInterface
+class ForcecopyExtension implements BootstrapInterface
 {
-    public function boostrap($app)
+    public function bootstrap($app)
     {
         if (!isset($app->components['debug'])) {
             return;

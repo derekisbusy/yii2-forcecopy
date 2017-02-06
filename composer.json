@@ -19,6 +19,6 @@
         }
     },
     "extra": {
-        "bootstrap": "derekisbusy\\forcecopy\\ForceCopyExtension"
+        "bootstrap": "derekisbusy\\forcecopy\\ForcecopyExtension"
     }
 }
