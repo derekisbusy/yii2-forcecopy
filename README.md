@@ -22,10 +22,22 @@ or add
 to the require section of your `composer.json` file.
 
 
+Setup Config
+------------
+
+Add the forcecopy panel to the debug panels list in your configuration file  :
+
+```php
+    'debug' => [
+        'class' => 'yii\debug\Module',
+        'panels' => [
+            'forcecopy' => ['class' => 'derekisbusy\forcecopy\ForcecopyPanel']
+        ]
+    ],
+```
+
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
-
-```php
-<?= \derekisbusy\forcecopy\AutoloadExample::widget(); ?>```
+The extension will add a section to the debug toolbar indicating whether or not forceCopy is on or off. 
+Click the forcecopy status label to change it's state on or off.
