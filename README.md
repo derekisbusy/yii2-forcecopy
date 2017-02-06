@@ -1,6 +1,6 @@
 Yii2-forcecopy
 ==============
-Adds a button to quickly turn forcecopy on/off in the asset manager .
+Adds a button to quickly turn [forceCopy](http://www.yiiframework.com/doc-2.0/yii-web-assetmanager.html#$forceCopy-detail) on/off in the asset manager .
 
 Installation
 ------------
