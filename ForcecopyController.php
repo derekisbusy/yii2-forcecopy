@@ -2,11 +2,13 @@
 
 namespace derekisbusy\forcecopy;
 
+use Yii;
+
 class ForcecopyController extends \yii\web\Controller
 {
     public function actionSwitch()
     {
-        $cookies = Yii::$app->cookies;
+        $cookies = Yii::$app->request->cookies;
         $forcecopy = $cookies->getValue('debug-forcecopy', 'Off');
         
         if ($forcecopy == 'Off') {
@@ -14,7 +16,7 @@ class ForcecopyController extends \yii\web\Controller
         } else {
             $forcecopy = 'Off';
         }
-        $cookies->add(new \yii\web\Cookie([
+        Yii::$app->response->cookies->add(new \yii\web\Cookie([
             'name' => 'debug-forcecopy',
             'value' => $forcecopy,
         ]));
