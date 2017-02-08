@@ -1,6 +1,6 @@
 #Yii2-forcecopy
 
-[![Latest Version](https://img.shields.io/github/release/qubyte/rubidium.svg?style=plastic)]()
+[![Latest Version](https://img.shields.io/github/release/derekisbusy/forcecopy.svg?style=plastic)]()
 [![Software License](https://img.shields.io/badge/license-BSD-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Total Downloads](https://img.shields.io/packagist/dt/derekisbusy/yii2-forcecopy.svg?style=flat-square)](https://packagist.org/packages/derekisbusy/yii2-forcecopy)
 
