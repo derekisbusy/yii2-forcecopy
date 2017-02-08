@@ -6,6 +6,7 @@ function waitForToolbarAndAttachClickEventToForcecopy()
         setTimeout(function(){ waitForToolbarAndAttachClickEventToForcecopy(); }, 1000);
         return;
     }
+    var url = link.getAttribute('data-url');
     link.onclick = function(){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
@@ -21,7 +22,7 @@ function waitForToolbarAndAttachClickEventToForcecopy()
                }
             }
         };
-        xmlhttp.open("GET", "/debug/forcecopy/switch", true);
+        xmlhttp.open("GET", url, true);
         xmlhttp.send();
         return false;
     }

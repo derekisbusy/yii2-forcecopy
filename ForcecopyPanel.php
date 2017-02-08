@@ -5,7 +5,7 @@ namespace derekisbusy\forcecopy;
 use Yii;
 use yii\base\Application;
 use yii\debug\Panel;
-
+use yii\helpers\Url;
 
 class ForcecopyPanel extends Panel
 {
@@ -35,12 +35,11 @@ class ForcecopyPanel extends Panel
     public function getSummary()
     {
 //        $forcecopy = 'on';
-        $forcecopy = Yii::$app->request->cookies->getValue('debug-focecopy',Yii::$app->assetManager->forceCopy ? 'On' : 'Off');
+        $forcecopy = Yii::$app->request->cookies->getValue('debug-forcecopy',Yii::$app->assetManager->forceCopy ? 'On' : 'Off');
+        $url = Url::toRoute(['/'.$this->module->id.'/forcecopy/switch']);
         $html = <<<EOL
-
-
 <div class="yii-debug-toolbar__block">         
-    Forcecopy <span id="debug-toolbar-forcecopy-link" class="yii-debug-toolbar__label yii-debug-toolbar__label_info" style="cursor: pointer">$forcecopy</span>
+    Forcecopy <span data-url="{$url}" id="debug-toolbar-forcecopy-link" class="yii-debug-toolbar__label yii-debug-toolbar__label_info" style="cursor: pointer">$forcecopy</span>
 </div>
 
 EOL;
