@@ -6,7 +6,7 @@ use yii\web\AssetBundle;
 
 class ForcecopyAsset extends AssetBundle
 {
-    public $sourcePath = '@derekisbusy/forcecopy';
+    public $sourcePath = '@derekisbusy/forcecopy/src';
     public $js = [
         'forcecopy.js'
     ];
